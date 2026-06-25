@@ -1,0 +1,184 @@
+{
+  "_comment": "Данные переведённых kill team. Чтобы добавить команду: добавь запись в killTeams (required + pool с лимитами maxCopies; poolPick — сколько выбрать из pool). У каждого оператора укажи apl, move, save, wounds для статблока. Опционально portrait — путь к картинке-портрету (например \"portraits/champion.png\"), тогда трекер покажет миниатюру слева от имени. Снаряжение фракции — в factionEquipment, ключ указывается в поле equipment команды.",
+  "killTeams": {
+    "Plague Marines": {
+      "archetypes": [
+        "Security",
+        "Seek & Destroy"
+      ],
+      "equipment": "Plague Marines",
+      "required": [
+        {
+          "name": "Champion",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 15,
+          "count": 1
+        }
+      ],
+      "poolPick": 5,
+      "pool": [
+        {
+          "name": "Bombardier",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        },
+        {
+          "name": "Fighter",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        },
+        {
+          "name": "Heavy Gunner",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        },
+        {
+          "name": "Icon Bearer",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        },
+        {
+          "name": "Malignant Plaguecaster",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        },
+        {
+          "name": "Warrior",
+          "apl": 3,
+          "move": "5\"",
+          "save": "3+",
+          "wounds": 14
+        }
+      ]
+    },
+    "Celestian Insidiants": {
+      "archetypes": [
+        "Security",
+        "Seek & Destroy"
+      ],
+      "equipment": "Celestian Insidiants",
+      "required": [
+        {
+          "name": "Insidiant Superior",
+          "apl": 3,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 10,
+          "count": 1
+        }
+      ],
+      "poolPick": 8,
+      "pool": [
+        {
+          "name": "Insidiant Abjuror",
+          "apl": 2,
+          "move": "6\"",
+          "save": "2+",
+          "wounds": 11
+        },
+        {
+          "name": "Insidiant Censor",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9
+        },
+        {
+          "name": "Insidiant Cremator",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9,
+          "maxCopies": 2
+        },
+        {
+          "name": "Insidiant Denuncia",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9
+        },
+        {
+          "name": "Insidiant Mortisanctus",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9
+        },
+        {
+          "name": "Insidiant Reliquarius",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9
+        },
+        {
+          "name": "Insidiant Warrior",
+          "apl": 2,
+          "move": "6\"",
+          "save": "3+",
+          "wounds": 9,
+          "maxCopies": 2
+        }
+      ]
+    }
+  },
+  "factionEquipment": {
+    "Plague Marines": [
+      {
+        "id": "plague_bells",
+        "name": "Plague Bells",
+        "desc": "Можно игнорировать любые изменения характеристик дружественных Plague Marines от ранения (injured), включая характеристики оружия."
+      },
+      {
+        "id": "blight_grenades",
+        "name": "Blight Grenades",
+        "desc": "Даёт ranged-оружие Blight grenade (Atk4 Hit4+ Dmg2/4, Range6\", Blast2\", Saturate, Severe, Poison) — нельзя использовать более двух раз за битву суммарно по команде."
+      },
+      {
+        "id": "plague_rounds",
+        "name": "Plague Rounds",
+        "desc": "Boltguns и bolt pistols дружественных Plague Marines получают правила Poison и Severe."
+      },
+      {
+        "id": "poison_vents",
+        "name": "Poison Vents",
+        "desc": "Когда враг активируется в пределах 3\" от дружественного Plague Marine: без Poison token — D3, на 3 получает token; с token — наносится D3 урона (вместо 1)."
+      }
+    ],
+    "Celestian Insidiants": [
+      {
+        "id": "saintly_relics",
+        "name": "Saintly Relics",
+        "desc": "Когда кубик атаки наносит урон дружественному Celestian Insidiant — брось D6 (2D6, если он INSPIRING): любая 6 игнорирует урон от этого кубика. Не более 1 кубика за действие и 2 за битву."
+      },
+      {
+        "id": "auto_flagellator",
+        "name": "Auto-Flagellator",
+        "desc": "При активации дружественного Celestian Insidiant — брось D6, нанеси урон равный половине результата (округляя вверх); на 4+ оператор также становится INSPIRING. Не более одного INSPIRING этим правилом за turning point."
+      },
+      {
+        "id": "psyk_out_grenades",
+        "name": "Psyk-Out Grenades",
+        "desc": "Даёт 2 stun grenades (обе из utility grenades, обязательно stun). Если враг проходит stun test с результатом 3+ от действия Celestian Insidiant — также наносится урон, равный половине результата (округляя вверх); PSYKER — урон равен полному результату."
+      },
+      {
+        "id": "vocifera_mortis",
+        "name": "Vocifera Mortis",
+        "desc": "Раз за битву, когда INSPIRING Celestian Insidiant выводится из строя — для faction rule Martyrdom можно выбрать другого оператора, даже если он не видим и не в пределах 6\"."
+      }
+    ]
+  }
+}
